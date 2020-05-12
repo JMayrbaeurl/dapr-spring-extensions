@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>dapr-spring-ext-parent</artifactId>
+    <groupId>io.dapr.spring</groupId>
+    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>dapr-spring-ext-parent</name>
+    <description>Dapr Spring extensions</description>
+
+    <properties>
+        <spring.version>5.2.2.RELEASE</spring.version>
+        <dapr.version>0.6.0-SNAPSHOT</dapr.version>
+        <javax.annotation.api.version>1.3.2</javax.annotation.api.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.dapr</groupId>
+                <artifactId>dapr-sdk-springboot</artifactId>
+                <version>${dapr.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>javax.annotation-api</artifactId>
+                <version>${javax.annotation.api.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>dapr-spring-boot</module>
+        <module>dapr-spring-support</module>
+    </modules>
+</project>
